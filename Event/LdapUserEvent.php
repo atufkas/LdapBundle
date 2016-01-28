@@ -23,7 +23,8 @@ class LdapUserEvent extends Event
 
     public function __construct(LdapUserInterface $user, TokenInterface $token)
     {
-        $this->user = $user;
+        $this->setUser($user);
+        $this->setToken($token);
     }
 
     /**
