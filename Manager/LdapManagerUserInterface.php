@@ -17,6 +17,7 @@ interface LdapManagerUserInterface
   function getGivenName();
   function getSurname();
   function getUsername();
+  function getPassword();
   function getRoles();
   function setUsername($username);
   function setPassword($password);

@@ -153,6 +153,11 @@ class LdapManagerUser implements LdapManagerUserInterface
         return $this;
     }
 
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
     /**
      * @return mixed $this
      * @throws \Symfony\Component\Security\Core\Exception\UsernameNotFoundException | Username not found
