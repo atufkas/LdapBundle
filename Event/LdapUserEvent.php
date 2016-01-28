@@ -4,6 +4,7 @@ namespace IMAG\LdapBundle\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 use IMAG\LdapBundle\User\LdapUserInterface;
@@ -11,8 +12,9 @@ use IMAG\LdapBundle\User\LdapUserInterface;
 class LdapUserEvent extends Event
 {
     private $user;
+    private $token;
 
-    public function __construct(LdapUserInterface $user)
+    public function __construct(LdapUserInterface $user, TokenInterface $token)
     {
         $this->user = $user;
     }
@@ -25,6 +27,18 @@ class LdapUserEvent extends Event
     public function setUser($user)
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    public function setToken($token)
+    {
+        $this->token = $token;
 
         return $this;
     }
