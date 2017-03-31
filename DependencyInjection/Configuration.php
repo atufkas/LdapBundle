@@ -19,10 +19,10 @@ class Configuration implements ConfigurationInterface
             ->end()
         ->end()
         ;
-    
+
     $this->addUserNode($rootNode);
     $this->addRoleNode($rootNode);
-    
+
     return $treeBuilder;
   }
 
@@ -39,7 +39,8 @@ class Configuration implements ConfigurationInterface
               ->scalarNode('version')->end()
               ->scalarNode('username')->end()
               ->scalarNode('password')->end()
-              ->booleanNode('bind_username_before')->defaultFalse()->end()
+              ->scalarNode('bind_username_prefix')->end()
+              ->booleanNode('bind_username_before')->end()
               ->scalarNode('referrals_enabled')->end()
               ->scalarNode('network_timeout')->end()
               ->booleanNode('skip_roles')->defaultFalse()->end()
