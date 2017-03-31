@@ -40,7 +40,7 @@ class Configuration implements ConfigurationInterface
               ->scalarNode('username')->end()
               ->scalarNode('password')->end()
               ->scalarNode('bind_username_prefix')->end()
-              ->booleanNode('bind_username_before')->end()
+              ->booleanNode('bind_username_before')->defaultFalse()->end()
               ->scalarNode('referrals_enabled')->end()
               ->scalarNode('network_timeout')->end()
               ->booleanNode('skip_roles')->defaultFalse()->end()
