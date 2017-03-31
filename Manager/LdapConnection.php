@@ -22,7 +22,9 @@ class LdapConnection implements LdapConnectionInterface
 
     public function search(array $params)
     {
-        $this->connect();
+        if ($this->ress === null) {
+            $this->connect();
+        }
 
         $ref = array(
             'base_dn' => '',
